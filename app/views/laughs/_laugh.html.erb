@@ -1,0 +1,8 @@
+<% case Type.find(laugh.type_id).name %>
+<% when 'meme' %>
+    <%= image_tag laugh.url, size: "400x400" %><br><br>
+<% when 'video' %>
+    <a href=<%= laugh.url %> target="_blank"><%= laugh.url %></a><br>
+<% when 'quote' %>
+    <p><%= laugh.url %></h3>
+<% end %>

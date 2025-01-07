@@ -1,0 +1,12 @@
+<%= form_with model: @laugh do |form| %>
+    <% @laugh.errors.each do |error| %>
+        <h3><%= error.full_message %></h3>
+    <% end %><br>
+    <%= form.label :url, "URL" %><br>
+    <%= form.text_field :url %><br>
+    <%= form.label :type_id, "Type" %><br>
+    <%= form.collection_select :type_id, Type.all, :id, :name %><br><br>
+    <%= form.submit %>
+<% end %>
+
+<%= button_to "LAUGH", laugh_path(Laugh.all.sample.id), method: :get %>
